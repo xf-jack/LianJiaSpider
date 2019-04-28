@@ -29,8 +29,8 @@ class LianjiaspiderItem(scrapy.Item):
     community_model_figure = scrapy.Field()  # 户型图
     community_model_name = scrapy.Field()  # 户型名
     # 相册
-    community_estate_photo = scrapy.Field()  # 相册图
-    community_estate_photo_name = scrapy.Field()  # 相册名
+    # community_estate_photo = scrapy.Field()  # 相册图
+    # community_estate_photo_name = scrapy.Field()  # 相册名
     # community_estate_photo_xiaoguo = scrapy.Field()  # 效果图
     # community_estate_photo_xiaoguo_name = scrapy.Field()  # 效果图名
     # 概况

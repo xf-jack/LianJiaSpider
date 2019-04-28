@@ -25,10 +25,14 @@ class LianjiaSpider(scrapy.Spider):
             yield scrapy.Request(url=estate_url_list, callback=self.parse_detail)
             time.sleep(self.delay)
 
-        # if self.page <= 1:
+        # if self.page <= 45:
         #     self.page += 1
         #     url = self.url.format(self.page)
         #     yield scrapy.Request(url=url, callback=self.parse)
+        next_pages = response.xpath('//div[@class="page"]/a[@class="next"]/@href').extract_first()
+        if next_pages:
+            next_page = "http://www.ljia.net" + next_pages
+            yield scrapy.Request(url=next_page, callback=self.parse)
 
     def parse_detail(self, response):
         item = LianjiaspiderItem()
